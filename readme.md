@@ -1,4 +1,4 @@
-![Docker Image Size](https://img.shields.io/docker/image-size/seu-usuario/api-produtos/latest?logo=docker)
+![Docker Image Size](https://img.shields.io/docker/image-size/edsonsiqueira/api-filmes-node/latest?logo=docker)
 
 Para executar a API basta:
 
