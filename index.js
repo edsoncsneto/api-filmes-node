@@ -12,6 +12,16 @@ app.get('/api/filmes', (req, res) => {
   res.json(filmes);
 });
 
+app.post('/api/filmes', (req, res) => {
+  const novoFilme = req.body;
+
+  novoFilme.id = filmes.length + 1;
+
+  filmes.push(novoFilme);
+  res.status(201).json(novoFilme);
+});
+
+
 app.listen(port, () => {
   console.log(`API rodando em http://localhost:${port}`);
 });
