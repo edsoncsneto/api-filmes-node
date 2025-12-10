@@ -1,3 +1,5 @@
+![Docker Image Size](https://img.shields.io/docker/image-size/seu-usuario/api-produtos/latest?logo=docker)
+
 Para executar a API basta:
 
 1. Clonar o projeto;
