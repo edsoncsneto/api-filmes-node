@@ -1,0 +1,32 @@
+---
+- name: Configurar servidor e instalar a API de produtos
+  hosts: all
+  become: yes
+  tasks:
+    - name: Atualizar o cache do apt
+      apt:
+        update_cache: yes
+
+    - name: Instalar Node.js
+      apt:
+        name: nodejs
+        state: present
+
+    - name: Instalar npm
+      apt:
+        name: npm
+        state: present
+
+    - name: Clonar o repositório
+      git:
+        repo: 'https://github.com/seu-usuario/api-produtos.git'
+        dest: /opt/api-produtos
+        version: main
+
+    - name: Instalar dependências do Node.js
+      command: npm install
+      args:
+        chdir: /opt/api-produtos
+
+    - name: Iniciar a API
+      command: nohup node /opt/api-produtos/index.js &
